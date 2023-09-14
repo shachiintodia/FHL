@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-example-app
+  namespace: default
+  labels:
+    app: go-example-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-example-app
+  template:
+    metadata:
+      labels:
+        app: go-example-app
+    spec:
+      containers:
+      - name: go-example-app
+        image: registryfhl.azurecr.io/docker_image:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8000
