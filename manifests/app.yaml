@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: go-example-app
-        image: registryfhl.azurecr.io/docker_image:latest
+        image: docker.io/library/flux_app:v1
         imagePullPolicy: Always
         ports:
           - containerPort: 8000
